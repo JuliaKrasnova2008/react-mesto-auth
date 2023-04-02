@@ -31,6 +31,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if(isAuth) {
     Promise.all([api.getUserInfo(), api.getAllCards()])
       .then(([user, cards]) => {
         setCurrentUser(user);
@@ -39,6 +40,7 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
+    }
   }, []);
 
   useEffect(() => {
