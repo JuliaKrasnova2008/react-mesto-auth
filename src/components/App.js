@@ -41,7 +41,7 @@ function App() {
         console.log(error);
       });
     }
-  }, []);
+  }, [isAuth]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
